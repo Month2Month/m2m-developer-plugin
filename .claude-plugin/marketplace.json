@@ -14,7 +14,7 @@
         "name": "Lianne Lee",
         "email": "llee@month2month.com"
       },
-      "source": ".",
+      "source": "./plugins/m2m-developer",
       "category": "development"
     }
   ]
