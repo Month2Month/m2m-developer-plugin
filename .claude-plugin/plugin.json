@@ -1,0 +1,9 @@
+{
+  "name": "m2m-developer",
+  "description": "M2M team developer skills for Claude Code — shared workflows for git, PRs, issues, and worktrees",
+  "version": "1.0.0",
+  "author": {
+    "name": "M2M Team",
+    "email": "dev@m2m.com"
+  }
+}
