@@ -4,13 +4,13 @@ Claude Code plugin with shared developer skills for the M2M team.
 
 ## Skills
 
-| Skill | Command | Description |
-|-------|---------|-------------|
-| **finish-pr** | `/m2m-developer:finish-pr 123` | Fix failing CI, update description, mark PR ready for review |
-| **fix-issue** | `/m2m-developer:fix-issue 42` | Fix a GitHub issue end-to-end: fetch, branch, implement, test, PR |
-| **commit-push-pr** | `/m2m-developer:commit-push-pr` | Stage, commit, push, and open a PR in one shot |
-| **sync-repos** | `/m2m-developer:sync-repos` | Pull latest on default branches for all repos in workspace |
-| **worktree** | `/m2m-developer:worktree feat/new-thing` | Create an isolated git worktree for parallel development |
+| Skill | Command | When to use | Description |
+|-------|---------|-------------|-------------|
+| **finish-pr** | `/m2m-developer:finish-pr 123` | PR pipeline is failing, fix it locally instead of @claude on GH | Fix failing CI, update description, mark PR ready for review |
+| **fix-issue** | `/m2m-developer:fix-issue 42` | Well-specced issue, go from zero to PR | Fix a GitHub issue end-to-end: fetch, branch, implement, test, PR |
+| **commit-push-pr** | `/m2m-developer:commit-push-pr` | Local changes ready to go, need branch + commit + PR in one shot | Sync default branch, create feature branch, commit, push, open PR |
+| **sync-repos** | `/m2m-developer:sync-repos` | Parent dir with many repos that need to be up to date | Pull latest on default branches for all repos in workspace |
+| **worktree** | `/m2m-developer:worktree feat/new-thing` | Tackle a feature/issue without disrupting other sessions | Create an isolated git worktree branched off default |
 
 ## When to Use Each Skill
 
