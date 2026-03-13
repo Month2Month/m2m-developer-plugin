@@ -1,0 +1,21 @@
+{
+  "name": "m2m-developer-plugin",
+  "description": "M2M team developer skills for Claude Code",
+  "owner": {
+    "name": "M2M Team",
+    "email": "llee@month2month.com"
+  },
+  "plugins": [
+    {
+      "name": "m2m-developer",
+      "description": "Shared workflows for git, PRs, issues, and worktrees",
+      "version": "1.0.0",
+      "author": {
+        "name": "Lianne Lee",
+        "email": "llee@month2month.com"
+      },
+      "source": ".",
+      "category": "development"
+    }
+  ]
+}
