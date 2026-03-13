@@ -18,12 +18,12 @@ Claude Code plugin with shared developer skills for the M2M team.
 
 1. Add the marketplace (one-time setup):
    ```
-   /plugin marketplace add m2m-team/m2m-developer-plugin
+   /plugin marketplace add Month2Month/m2m-developer-plugin
    ```
 
 2. Install the plugin:
    ```
-   /plugin install m2m-developer@m2m-team
+   /plugin install m2m-developer@Month2Month
    ```
 
 ### Option B: Install locally for testing
