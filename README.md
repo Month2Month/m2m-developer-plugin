@@ -10,6 +10,8 @@ Claude Code plugin with shared developer skills for the M2M team.
 | **fix-issue** | `/m2m-developer:fix-issue 42` | Well-specced issue, go from zero to PR | Fix a GitHub issue end-to-end: fetch, branch, implement, test, PR |
 | **commit-push-pr** | `/m2m-developer:commit-push-pr` | Local changes ready to go, need branch + commit + PR in one shot | Sync default branch, create feature branch, commit, push, open PR |
 | **sync-repos** | `/m2m-developer:sync-repos` | Parent dir with many repos that need to be up to date | Pull latest on default branches for all repos in workspace |
+| **move-changes-to-branch** | `/m2m-developer:move-changes-to-branch feat/thing` | Uncommitted changes on wrong branch, need to move them | Stash work, sync default branch, create feature branch, restore and commit |
+| **create-feature-branch** | `/m2m-developer:create-feature-branch feat/thing` | Starting new work, need a clean branch | Create a fresh feature branch from latest default branch |
 | **worktree** | `/m2m-developer:worktree feat/new-thing` | Tackle a feature/issue without disrupting other sessions | Create an isolated git worktree branched off default |
 
 ## When to Use Each Skill
@@ -43,6 +45,26 @@ You've been working locally — changes are sitting uncommitted, maybe you're on
 ```
 
 It syncs the default branch, creates an appropriately named feature branch, commits your changes, pushes, and opens a PR. Works no matter where you are in the git tree.
+
+### move-changes-to-branch
+
+You've been hacking on `main` or a stale branch and realize your changes belong on a proper feature branch:
+
+```
+/m2m-developer:move-changes-to-branch feat/new-search
+```
+
+It stashes everything (including untracked files), syncs the default branch, creates a new branch, restores your work, and commits it. If you don't provide a branch name, it'll ask.
+
+### create-feature-branch
+
+You're about to start new work and want a clean branch off the latest default:
+
+```
+/m2m-developer:create-feature-branch fix/login-redirect
+```
+
+Syncs the default branch and creates a new branch from it. If you have uncommitted changes, it warns you and suggests `move-changes-to-branch` instead.
 
 ### worktree
 
