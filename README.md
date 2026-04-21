@@ -13,6 +13,7 @@ Claude Code plugin with shared developer skills for the M2M team.
 | **move-changes-to-branch** | `/m2m-developer:move-changes-to-branch feat/thing` | Uncommitted changes on wrong branch, need to move them | Stash work, sync default branch, create feature branch, restore and commit |
 | **create-feature-branch** | `/m2m-developer:create-feature-branch feat/thing` | Starting new work, need a clean branch | Create a fresh feature branch from latest default branch |
 | **worktree** | `/m2m-developer:worktree feat/new-thing` | Tackle a feature/issue without disrupting other sessions | Create an isolated git worktree branched off default |
+| **feature-release-notes** | `/m2m-developer:feature-release-notes` | Announce a feature (or weekly roundup) to the company | Find the merged PRs across the M2M org, summarize in the user's voice, save to /tmp |
 
 ## When to Use Each Skill
 
@@ -75,6 +76,16 @@ You want to tackle a feature or issue without disrupting your current working di
 ```
 
 Creates an isolated git worktree branched off the default branch. Useful when you're juggling multiple things and don't want context bleed between tasks.
+
+### feature-release-notes
+
+You shipped a feature (or a batch of features this week) and want to write it up for the company — not just engineering. Describe the feature in plain language:
+
+```
+/m2m-developer:feature-release-notes
+```
+
+Finds the merged PRs across the Month2Month org that implemented the feature, filters out the tangential ones, and drafts a Slack/email-ready announcement in the user's voice — `Hi team, I'm excited to announce…`. Supports single-feature announcements and multi-feature weekly roundups (emoji-headed product-area sections). PR references are kept in a delete-before-sending footer. Saves to `/tmp/release-notes-<slug>-<date>.md`.
 
 ### sync-repos
 
