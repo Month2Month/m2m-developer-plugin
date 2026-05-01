@@ -9,7 +9,7 @@
     {
       "name": "m2m-developer",
       "description": "Shared workflows for git, PRs, issues, and worktrees",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "author": {
         "name": "Lianne Lee",
         "email": "llee@month2month.com"
