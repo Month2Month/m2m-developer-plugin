@@ -122,4 +122,17 @@ claude --plugin-dir /path/to/m2m-developer-plugin
 1. Create a new directory under `skills/` with the skill name
 2. Add a `SKILL.md` file with YAML frontmatter and instructions
 3. Test locally with `claude --plugin-dir .`
-4. Open a PR for team review
+4. **Bump the version** in **both** `plugins/m2m-developer/plugin.json` and `.claude-plugin/marketplace.json` (they must stay in lockstep — `/plugin` reads the version from `marketplace.json` to detect updates, and the cache is keyed on it)
+5. Open a PR for team review
+
+## Releasing a new version
+
+To get a change (new skill, edit, fix) to propagate to installed clients:
+
+1. Bump `version` in **both** files in the same commit:
+   - `.claude-plugin/marketplace.json` → `plugins[0].version`
+   - `plugins/m2m-developer/plugin.json` → `version`
+2. Push to `main`.
+3. On each client, run `/plugin` → update **m2m-developer**, then `/reload-plugins`.
+
+If only `plugin.json` is bumped, `/plugin` will report "already at the latest version" because it reads `marketplace.json`. If only `marketplace.json` is bumped, the install will succeed but the cache directory name (which uses `plugin.json`'s version) won't roll, so stale skills can linger. Always bump both.
